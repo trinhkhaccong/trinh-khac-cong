@@ -69,8 +69,10 @@
 
     <div class="form-group">
       <select id="action">
-        <option value="3.5">Thép 3.5ml</option>
-        <option value="4.5">Thép 4.5ml</option>
+        <option value="10">Thép 3.5ml</option>
+        <option value="20">Thép 4.5ml</option>
+        <option value="30">Thép 5.5ml</option>
+        <option value="40">Thép 6.5ml</option>
       </select>
     </div>
 
@@ -92,12 +94,12 @@
       const c = parseFloat(document.getElementById("c").value) || 0;
       const d = parseFloat(document.getElementById("d").value) || 0;
 
-      const tong = a + b + c + d;
+      const tong = a * b + c * d;
       const ketQua = tong * heSo;
 
       document.getElementById("result").innerHTML = `
         <strong>Kết quả:</strong><br>
-        (${a} + ${b} + ${c} + ${d}) × ${heSo} = <strong>${ketQua}</strong>
+        (${a} x ${b} + ${c} x ${d}) × ${heSo} = <strong>${ketQua}</strong>
       `;
     }
   </script>
