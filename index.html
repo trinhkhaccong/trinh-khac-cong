@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tính tổng x hệ số</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+      margin: 0;
+      background: #f5f5f5;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    h2 { text-align: center; margin-bottom: 20px; }
+    .form-group { margin-bottom: 15px; }
+    input, select, button {
+      padding: 12px;
+      width: 100%;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      font-weight: bold;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    #result {
+      margin-top: 20px;
+      padding: 15px;
+      background: #e0f7fa;
+      border-left: 5px solid #0097a7;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Tính tổng x hệ số</h2>
+
+    <div class="form-group">
+      <select id="action">
+        <option value="3.5">Thép 3.5ml</option>
+        <option value="4.5">Thép 4.5ml</option>
+      </select>
+    </div>
+
+    <div class="form-group"><input type="number" id="a" placeholder="Nhập a"></div>
+    <div class="form-group"><input type="number" id="b" placeholder="Nhập b"></div>
+    <div class="form-group"><input type="number" id="c" placeholder="Nhập c"></div>
+    <div class="form-group"><input type="number" id="d" placeholder="Nhập d"></div>
+
+    <button onclick="tinhKetQua()">Hiển thị kết quả</button>
+
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function tinhKetQua() {
+      const heSo = parseFloat(document.getElementById("action").value);
+      const a = parseFloat(document.getElementById("a").value) || 0;
+      const b = parseFloat(document.getElementById("b").value) || 0;
+      const c = parseFloat(document.getElementById("c").value) || 0;
+      const d = parseFloat(document.getElementById("d").value) || 0;
+
+      const tong = a + b + c + d;
+      const ketQua = tong * heSo;
+
+      document.getElementById("result").innerHTML = `
+        <strong>Kết quả:</strong><br>
+        (${a} + ${b} + ${c} + ${d}) × ${heSo} = <strong>${ketQua}</strong>
+      `;
+    }
+  </script>
+
+</body>
+</html>
