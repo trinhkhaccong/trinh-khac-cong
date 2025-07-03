@@ -53,7 +53,7 @@
       background-color: #0056b3;
     }
     #result {
-      min-height: 15vh;
+      min-height: 10vh;
       margin-top: 20px;
       padding: 15px;
       background: #e0f7fa;
@@ -83,6 +83,7 @@
     <div class="form-group"><input type="number" id="b" placeholder="Nhập Chiều Cao"></div>
     <div class="form-group"><input type="number" id="c" placeholder="Nhập Số Dây"></div>
     <div class="form-group"><input type="number" id="d" placeholder="Nhập Chiều Dài"></div>
+    <div class="form-group"><input type="number" id="e" placeholder="Nhập Số Lượng"></div>
 
     <button onclick="tinhKetQua()">Hiển thị kết quả</button>
 
@@ -96,13 +97,14 @@
       const b = parseFloat(document.getElementById("b").value) || 0;
       const c = parseFloat(document.getElementById("c").value) || 0;
       const d = parseFloat(document.getElementById("d").value) || 0;
+      const e = parseFloat(document.getElementById("e").value) || 0;
 
       const tong = a * b + c * d;
-      const ketQua = tong * heSo;
+      const ketQua = tong * heSo * e;
 
       document.getElementById("result").innerHTML = `
         <strong>Kết quả:</strong><br>
-        (${a} x ${b} + ${c} x ${d}) × ${heSo} = <strong>${Number(ketQua.toFixed(10))}</strong>
+        ((${a} x ${b} + ${c} x ${d}) × ${heSo}) x ${e} = <strong>${Number(ketQua.toFixed(10))}</strong>
       `;
     }
   </script>
